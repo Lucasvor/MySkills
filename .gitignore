@@ -1,0 +1,15 @@
+# Artefatos gerados ou baixados localmente
+guia_completo_62_skills_codex.pdf
+*.zip
+
+# Configuração e lixo de ferramentas
+.vscode/
+.idea/
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Segredos e arquivos locais
+.env
+.env.*
+!.env.example
