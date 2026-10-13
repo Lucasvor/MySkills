@@ -1,0 +1,5 @@
+interface:
+  display_name: "To Issues"
+  short_description: "Plan tracker tickets with blocking edges"
+policy:
+  allow_implicit_invocation: false
