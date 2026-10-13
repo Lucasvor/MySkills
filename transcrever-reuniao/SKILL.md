@@ -10,7 +10,7 @@ description: Transcreve um vídeo de reunião usando Whisper e gera um relatóri
 O usuário fornece o caminho do vídeo. Você transcreve e gera o `.md`.
 
 ```
-Transcreve o vídeo: C:\Users\Lucas\Videos\MinhaReuniao.mp4
+Transcreva o vídeo em `C:\caminho\para\MinhaReuniao.mp4`.
 ```
 
 ## Workflow
@@ -25,13 +25,17 @@ Transcreve o vídeo: C:\Users\Lucas\Videos\MinhaReuniao.mp4
 Execute no terminal (PowerShell):
 
 ```powershell
-& "D:\1 - Programas\LLPlayer\Whisper\Faster-Whisper-XXL\faster-whisper-xxl.exe" `
-  --output_dir "D:\Documentos\Visual Studio 2022\Projects\Projeto autorization\Legendas" `
+$env:WHISPER_EXE = "C:\caminho\para\faster-whisper-xxl.exe"
+$env:TRANSCRIPT_OUTPUT_DIR = "C:\caminho\para\Legendas"
+$env:WHISPER_MODEL_DIR = "C:\caminho\para\whispermodels"
+
+& $env:WHISPER_EXE `
+  --output_dir $env:TRANSCRIPT_OUTPUT_DIR `
   --output_format srt `
   --verbose True `
   --beep_off `
   --model large-v3-turbo `
-  --model_dir "D:\1 - Programas\LLPlayer\whispermodels" `
+  --model_dir $env:WHISPER_MODEL_DIR `
   --language pt `
   --device cuda `
   -ct float16 `
@@ -39,7 +43,7 @@ Execute no terminal (PowerShell):
 ```
 
 - Use `mode=sync` com timeout de 600000ms (10 min).
-- O SRT gerado fica em: `D:\Documentos\Visual Studio 2022\Projects\Projeto autorization\Legendas\<nome-do-video>.srt`
+- O SRT gerado fica em: `$env:TRANSCRIPT_OUTPUT_DIR\<nome-do-video>.srt`
 
 ### 3. Ler o SRT gerado
 
