@@ -45,17 +45,13 @@ Se algum arquivo nao existir, crie com estrutura minima e avise o usuario em uma
 Se a entrada for video, rode o Whisper usando o comando local conhecido pelo usuario:
 
 ```powershell
-$env:WHISPER_EXE = "C:\caminho\para\faster-whisper-xxl.exe"
-$env:TRANSCRIPT_OUTPUT_DIR = "C:\caminho\para\Legendas"
-$env:WHISPER_MODEL_DIR = "C:\caminho\para\whispermodels"
-
-& $env:WHISPER_EXE `
-  --output_dir $env:TRANSCRIPT_OUTPUT_DIR `
+& "D:\1 - Programas\LLPlayer\Whisper\Faster-Whisper-XXL\faster-whisper-xxl.exe" `
+  --output_dir "D:\Documentos\Visual Studio 2022\Projects\Projeto autorization\Legendas" `
   --output_format srt `
   --verbose True `
   --beep_off `
   --model large-v3-turbo `
-  --model_dir $env:WHISPER_MODEL_DIR `
+  --model_dir "D:\1 - Programas\LLPlayer\whispermodels" `
   --language pt `
   --device cuda `
   -ct float16 `
