@@ -1,6 +1,6 @@
 # Artefatos gerados ou baixados localmente
 guia_completo_62_skills_codex.pdf
-*.zip
+#*.zip
 
 # Configuração e lixo de ferramentas
 .vscode/
